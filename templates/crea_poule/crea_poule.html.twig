@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CreaPouleController!{% endblock %}
+
+    
+{% block body %}
+    {% include "navBar.html.twig" %}
+    {% include "sideBar.html.twig" %}
+    <div id="main">
+        <div class="creaPoule">
+        </div>
+        <div id="ficheDesc" class="row row-cols-5 d-flex justify-content-evenly">
+            <div id="cadreDesc" class="cadreDesc shadow">
+                <div id="tabDesc"></div>
+                   {{ form(crea_poule_form) }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

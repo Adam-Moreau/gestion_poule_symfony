@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{# {% use "index/poule.html.twig" %} #}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+    {% include "navBar.html.twig" %}
+    {% include "sideBar.html.twig" %}
+ 
+    <div id="main">
+        <div class="creaPoule">
+            <a href="/crea/poule" role="button"><img src="{{ asset('styles/icons/hen.png') }}" alt="Logo" class="iconAddP"></a>
+        </div>
+        <div class="row row-cols-5 g-4">
+            {% for poule in poules %}
+                {% include "index/poule.html.twig" %}
+           {% endfor %}
+                
+        </div>
+            {% include "pagination.html.twig" %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

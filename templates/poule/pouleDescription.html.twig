@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poule - {{ poule.nomPoule}}{% endblock %}
+
+{% block body %}
+    {% include "sideBar.html.twig" %}
+    {% include "navBar.html.twig" %}
+    <div id="main">
+    
+        <div class="creaPoule">
+        </div>
+        
+        <div id="ficheDesc" class="row row-cols-5 d-flex justify-content-evenly">
+            {% include "index/poule.html.twig" %}
+            <div> <button type="button" onclick="formModifPoule()">Try it</button> </div>
+            <div id="cadreDesc" class="cadreDesc shadow">
+
+                <div id="tabDesc"></div>
+                {{ form(poule_form) }}
+
+            </div>
+        </div>
+        
+    </div>
+    
+    
+{% endblock %}

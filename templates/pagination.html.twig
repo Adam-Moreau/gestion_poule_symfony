@@ -1,0 +1,37 @@
+    <table class="table-sm position-absolute bottom-0 start-50 translate-middle-x">
+        <tr>
+            {% if previous >= 0 %}
+                <th >
+                    <a class="pagination" href="{{ path('app_index', {offset: previous }) }}">Previous</a>
+                </th>
+            {% else %}
+                <th >
+                    <a class="notClickable pagination" href="{{ path('app_index', {offset: previous }) }}">Previous</a>
+                </th>
+            {% endif %}
+            {% set current = 0 %}
+
+            {% if count is divisible by(2) %}
+                {% set loop = count / paginator - 1 %}
+            {% else %}
+                {% set loop = count / paginator %}
+            {% endif %}
+
+            {% for i in 0.. loop %}
+                {% set page = count - count + i  %}
+                
+                <th >
+                    <a class="pagination" href="{{ path('app_index', {offset: (page * paginator) }) }}"> {{page + 1}} </a>
+                </th>
+            {% endfor %}
+            {% if next < poules|length %}
+                <th >
+                    <a class="pagination" href="{{ path('app_index', {offset: next }) }}">Next</a>
+                </th>
+            {% else %}
+                <th >
+                    <a class="notClickable pagination" href="{{ path('app_index', {offset: next }) }}">Next</a>
+                </th>
+            {% endif %}
+        </tr>
+    </table>
