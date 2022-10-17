@@ -16,7 +16,7 @@ class PouleCreaFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none'],])
+            ->add('nom_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none actvForm'],])
 
             ->add('sexe_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none'],])
 

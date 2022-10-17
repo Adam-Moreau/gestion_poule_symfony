@@ -44,6 +44,9 @@ class Poule
     #[ORM\ManyToOne(inversedBy: 'poules')]
     private ?Utilisateur $utilisateur = null;
 
+    #[ORM\OneToOne(inversedBy: 'poule', cascade: ['persist', 'remove'])]
+    private ?Couvaison $couvaison = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,6 +156,18 @@ class Poule
     public function setUtilisateur(?Utilisateur $utilisateur): self
     {
         $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    public function getCouvaison(): ?Couvaison
+    {
+        return $this->couvaison;
+    }
+
+    public function setCouvaison(?Couvaison $couvaison): self
+    {
+        $this->couvaison = $couvaison;
 
         return $this;
     }
