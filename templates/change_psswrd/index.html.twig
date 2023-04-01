@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Changement mot de passe{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-3 boxRegister p-4">
+                <p class="titleForm my-4 font-weight-normal">Nouveau mot de passe</p>
+
+                {{ form(change_psswrd_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

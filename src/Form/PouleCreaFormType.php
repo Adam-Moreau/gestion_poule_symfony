@@ -10,29 +10,63 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class PouleCreaFormType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
+    public function buildForm(
+        FormBuilderInterface $builder,
+        array $options
+    ): void {
         $builder
-            ->add('nom_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none actvForm'],])
+            ->add('nom_poule', TextType::class, [
+                'attr' => [
+                    'class' => 'areaDesc form-control mx-auto my-2 shadow-none',
+                ],
+            ])
 
-            ->add('sexe_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none'],])
+            ->add('sexe_poule', TextType::class, [
+                'attr' => [
+                    'class' => 'areaDesc form-control mx-auto my-2 shadow-none',
+                ],
+            ])
 
-            ->add('photo_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none'],])
+            ->add('photo_poule', FileType::class, [
+                'label' => 'Photo de la poule',
+                'attr' => ['class' => 'form-control mx-auto my-2 shadow-none'],
+                'mapped' => false,
+            ])
 
-            ->add('race_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none'],])
+            ->add('race_poule', TextType::class, [
+                'attr' => [
+                    'class' => 'areaDesc form-control mx-auto my-2 shadow-none',
+                ],
+            ])
 
-            ->add('colori_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 shadow-none'],])
+            ->add('colori_poule', TextType::class, [
+                'attr' => [
+                    'class' => 'areaDesc form-control mx-auto my-2 shadow-none',
+                ],
+            ])
 
-            ->add('bague_poule', CheckboxType::class, ['attr' => ['class' => 'areaDesc my-2 shadow-none'],])
+            ->add('bague_poule', CheckboxType::class, [
+                'attr' => ['class' => 'areaDesc my-2 shadow-none'],
+            ])
 
-            ->add('commentaire_poule', TextType::class, ['attr' => ['class' => 'areaDesc form-control mx-auto my-2 pb-5 shadow-none'],])
+            ->add('commentaire_poule', TextType::class, [
+                'attr' => [
+                    'class' =>
+                        'areaDesc form-control mx-auto my-2 pb-5 shadow-none',
+                ],
+            ])
 
-            ->add('date_eclo', DateType::class, ['attr' => ['class' => 'dateDesc pb-4 mx-auto my-2 shadow-none'],])
-            ->add('Ajouter', SubmitType::class, ['attr' => ['class' => 'buttonCustom mx-auto shadow-none'],])
-        ;
+            ->add('date_eclo', DateType::class, [
+                'attr' => ['class' => 'dateDesc pb-4 mx-auto my-2 shadow-none'],
+            ])
+
+            ->add('Ajouter', SubmitType::class, [
+                'attr' => ['class' => 'buttonCustom mx-auto shadow-none'],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

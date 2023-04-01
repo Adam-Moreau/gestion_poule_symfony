@@ -1,18 +1,15 @@
 {% block poule %}
-    <div class="col mb-4">
-    <form action="/poule/{{ poule.id }}">
-        <button class="button" type="submit">
-            <div class="card shadow">
-                <img src="{{ asset('images/pouleTest.png') }}" alt="Logo" class="cardSize card-img-top ">
-                <div class="card-img-overlay">
-                    <div class="cardText">
-                        <p id="nomP" class="card-title">{{ poule.nomPoule }}</p>
-                        <p class="card-text">{{ poule.racePoule }}</p>
-                    </div>
+    <div class="mb-4">
+    <a href="/poule/{{ poule.id }}">
+        <div class="card shadow">
+            <img src="{{ asset('images/pouleTest.png') }}" alt="Logo" class="cardSize card-img-top ">
+            <div class="card-img-overlay">
+                <div class="cardText">
+                    <p id="nomP" class="card-title">{{ poule.nomPoule }}</p>
+                    <p class="card-text">{{ poule.racePoule }}</p>
                 </div>
             </div>
-        </button>
-    </form>
+        </div>   
+    </a>
         
-    
 {% endblock %}

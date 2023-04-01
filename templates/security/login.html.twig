@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Se connecter{% endblock %}
 
 {% block body %}
 
 <div class="container">
     <div class="row  d-flex align-items-center">
-        <div class="col-3"></div>
-        <div class=" align-middle col-3">
-            <form class="boxLogin" method="post">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <form class="boxLogin shadow" method="post">
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
@@ -20,11 +21,11 @@
                 {% endif %} #}
             
                 
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <label for="inputUsername">Username</label>
+                <p class="titleForm mb-3">Se connecter</p>
+                <label for="inputUsername">Nom utilisateur</label>
                 <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control shadow-none boxForm" autocomplete="username" required autofocus>
                 <br>
-                <label for="inputPassword">Password</label>
+                <label for="inputPassword">Mot de passe</label>
                 <input type="password" name="password" id="inputPassword" class="form-control shadow-none boxForm" autocomplete="current-password" required>
                 <br>
                 <a href="#" class="forgottenPwd">Mot de passe oublie ?</a>
@@ -46,12 +47,12 @@
                     </div>
                 #}
                 <br>
-                <div class="text-center">
-                    <button class="btn btn-lg shadow-none buttonLog" type="submit">
-                    Log in 
-                </button>
+                <div>
+                    <button class="buttonCustom log mx-auto shadow-none mt-4" type="submit" name="login">se connecter </button>
                 </div>
-
+                <div>
+                    <a href="/register" class="buttonCustom log sign mx-auto shadow-none my-4" role="button" data-bs-toggle="button">S'inscrire</a>
+                </div>
             
 
                 
@@ -60,12 +61,6 @@
             
         </div>
         
-        <div class="col-3">
-            <div class="boxbuttonLinkReg"> <div class="align-items-center">
-                <a href="#" class="btn btn-lg shadow-none buttonLinkReg" role="button" data-bs-toggle="button">Sign in</a>
-            </div>
-        </div>  
-
     </div>
 </div>
 

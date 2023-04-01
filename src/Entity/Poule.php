@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\PouleRepository;
 use Doctrine\DBAL\Types\Types;
+// use ApiPlatform\Metadata\ApiResource;
+
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PouleRepository::class)]
+#[ApiResource]
 class Poule
 {
     #[ORM\Id]

@@ -1,15 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}S'inscrire{% endblock %}
 
 {% block body %}
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-3 boxRegister p-4">
-                <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                <p class="titleForm mb-3">S'inscrire</p>
 
                 {{ form_start(registrationForm) }}
                     <div class="textReg"> {{ form_row(registrationForm.username) }}</div>
+                    <div class="textReg"> {{ form_row(registrationForm.nom) }}</div>
                    
                     <div class="textReg"> {{ form_row(registrationForm.mail_user) }}</div>
                     <div class="textReg"> {{ form_row(registrationForm.plainPassword.first, {
@@ -20,7 +21,7 @@
                     }) }}</div>
                     <div class="textReg"> {{ form_row(registrationForm.agreeTerms) }} </div>
 
-                    <button type="submit" class="btn btn-lg shadow-none buttonReg">Register</button>
+                    <button type="submit" class="buttonCustom shadow-none mt-4 mx-auto">S'inscrire</button>
                 {{ form_end(registrationForm) }}
             </div>
         </div>

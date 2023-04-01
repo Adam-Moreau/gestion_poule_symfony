@@ -1,5 +1,11 @@
-<nav class="navbar shadow p-3 mb-5 bg-body navbar-light bg-light">
+<nav class="navbar shadow bg-body navbar-light bg-light">
         <div class="container-fluid">
-            
+                <a href="/index" role="button"><img src="{{ asset('styles/icons/hen.png') }}" alt="Logo" class="iconSite"></a>
+                <div class="col"></div>
+                {% if is_granted('ROLE_USER') %}
+                        <a class="nav-link" href="{{ path('app_change_psswrd') }}">Changer mot de passe</a> 
+                        <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>                        
+                {% endif %}
+
         </div>
 </nav>

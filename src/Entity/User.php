@@ -35,6 +35,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?bool $activ_user = true;
 
+    #[ORM\Column(length: 16)]
+    private ?string $Nom = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -125,6 +128,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setActivUser(bool $activ_user): self
     {
         $this->activ_user = $activ_user;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->Nom;
+    }
+
+    public function setNom(string $Nom): self
+    {
+        $this->Nom = $Nom;
 
         return $this;
     }

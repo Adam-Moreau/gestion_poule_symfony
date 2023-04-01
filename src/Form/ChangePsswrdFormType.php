@@ -4,48 +4,34 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
-class RegistrationFormType extends AbstractType
+class ChangePsswrdFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('username', TextType::class, ['attr' => ['class' => 'form-control mx-auto my-2 shadow-none'],])
-            ->add('nom', TextType::class, ['attr' => ['class' => 'form-control mx-auto my-2 shadow-none'],])
-            ->add('mail_user', EmailType::class, ['attr' => ['class' => 'form-control mx-auto my-2 shadow-none'],])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'attr' => ['class' => 'mx-auto ps-2 shadow-none'],
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
-                ],
-            ], TextType::class, ['attr' => ['class' => 'form-control mx-auto my-2 shadow-none'],])
             ->add('plainPassword',RepeatedType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'type' => PasswordType::class,
                 'mapped' => false,
-                'options' =>['attr' => ['autocomplete' => 'new-password', 'class' => 'form-control mx-auto my-2 shadow-none']],
-                'first_options'  => ['label' => 'Password'],
-                'second_options' => ['label' => 'Repeat Password'],
+                'options' =>['attr' => ['autocomplete' => 'new-password', 'class' => 'form-control mx-auto mb-4 shadow-none']],
+                'first_options'  => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Confirmer mot de passe'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
-                    ]),
+                        'message' => 'Entrer un mot de passe',
+                    ]),  
                     new Length([
                         'min' => 8,
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
@@ -78,6 +64,7 @@ class RegistrationFormType extends AbstractType
                     
                 ],
             ])
+            ->add('Modifier', SubmitType::class, ['attr' => ['class' => 'buttonCustom mx-auto mt-5 shadow-none'],])
         ;
     }
 

@@ -53,20 +53,36 @@ body{
 }
 
 .boxLogin{
-margin-top: 55%;
-margin-bottom: 55%;
-background-color:white;
-border-radius: 10px;
-padding: 30px;
+ margin-top: 55%;
+ margin-bottom: 55%;
+ background-color:white;
+ border-radius: 15px;
+ padding: 30px;
+ min-width:350px;
 }
 
 .boxRegister{
 
   background-color:white;
-  border-radius: 10px;
+  border-radius: 15px;
   margin-top:10%;
+  min-width:400px;
+ min-height:auto;
+
 
 }
+
+.titleForm{
+
+ font-size:26px;
+ font-weight:bolder;
+ text-align:center;
+ 
+
+ 
+}
+
+
 
 .forgottenPwd{
 
@@ -155,6 +171,7 @@ border-style:solid;
 
 
 .sidebar {
+    margin-top:80px;
     height: 100%;
     width:220px;
     position: fixed;
@@ -189,16 +206,23 @@ border-style:solid;
   object-fit: cover;
   max-height: 320px;
  border-radius:15px
-
-
 }
 
 .card{
 
   border: transparent;
- border-radius:5%;
- background-color: #f1edff;
+  border-radius:5%;
+  background-color: #f1edff;
+  max-width: 300px;
+  max-height: 320px;
+  min-width: 300px;
+  min-height: 320px;
 
+
+}
+.card.plus{
+
+  background-color: white;
 
 }
 .card-img-overlay{
@@ -219,12 +243,15 @@ border-style:solid;
  padding:9px;
  font-variant: small-caps;
  font-size:16px;
+ font-weight:normal;
+ color:black;
+ text-align:center;
  
 }
 #nomP{
 
  font-weight: 600;
-  font-size:18px;
+ font-size:18px;
  font-variant: none;
 
  
@@ -245,20 +272,31 @@ border-style:solid;
 .navbar{
  width:100%;
  z-index:1;
- height: 60px;
+ height: 80px;
  position: fixed;
 }
 
 .creaPoule{
 
- margin-top:100px;
+ margin-top:250px;
  margin-bottom:40px;
 }
 
 .iconAddP{
  
+ display: block;
+ width:96px;
+ height:96px;
+ margin-top:104px;
+ 
+}
+.iconSite{
+ 
+ display: block;
  width:64px;
  height:64px;
+ margin-left:55px;
+
  
 }
 
@@ -267,14 +305,31 @@ border-style:solid;
  border:none;
  border-radius:10px;
  width:210px;
- height:70px;
+ height:60px;
  background-color:#4B49AC;
  color:white;
  display:block;
  font-size:22px;
  font-weight:bold;
  font-variant:all-small-caps;
+ text-decoration:none;
+ text-align:center;
 }
+.buttonCustom.log{
+
+
+ height:44px;
+ font-size:20px;
+ 
+}
+
+.buttonCustom.log.sign{
+
+ padding:5px;
+ height:44px;
+ 
+}
+
 
 .buttonCustom:hover{
 
