@@ -32,7 +32,7 @@ security:
                 
             logout :
                 path : app_logout
-                
+                targert : /
                 # where to redirect after logout
                 # target: app_any_route
 
@@ -47,7 +47,7 @@ security:
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/profile, roles: ROLE_USER }
-         - { path: ^/index, roles: ROLE_USER }
+         - { path: ^/, roles: ROLE_USER }
          - { path: ^/poule, roles: ROLE_USER }
          - { path: ^/api/docs, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI
          - { path: ^/auth, roles: PUBLIC_ACCESS }

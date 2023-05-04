@@ -11,7 +11,7 @@ use App\Repository\PouleRepository;
 
 class IndexController extends AbstractController
 {
-    #[Route('/index', name: 'app_index')]
+    #[Route('/', name: 'app_index')]
     public function index(Request $request, Environment $twig, PouleRepository $pouleRepository): Response
     {
         $poules = $pouleRepository->findAll();
